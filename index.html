@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101513">
+  <meta name="description" content="一款可以直接在瀏覽器遊玩的街機風格 F1 賽車遊戲。">
+  <title>APEX / F1 街機賽車</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="APEX 首頁"><span class="brand-mark">A</span><span>APEX<span class="muted"> / RACING</span></span></a>
+      <div class="season">ARCADE SERIES <span>•</span> ROUND 01</div>
+      <button id="soundBtn" class="sound" aria-label="切換音效">音效 <b>OFF</b></button>
+    </header>
+
+    <section class="game-layout" aria-label="賽車遊戲">
+      <div class="intro">
+        <p class="eyebrow"><span class="live-dot"></span> CIRCUIT DE MONACO</p>
+        <h1>RACE<br><em>THE</em> NIGHT.</h1>
+        <p class="subcopy">踩下油門，穿過街道賽道。<br>三圈決勝，看看你能否登上頒獎台。</p>
+        <div class="controls"><span class="control-title">操作方式</span><div><kbd>↑</kbd><kbd>W</kbd><span>加速</span></div><div><kbd>↓</kbd><kbd>S</kbd><span>煞車</span></div><div><kbd>←</kbd><kbd>A</kbd><kbd>→</kbd><kbd>D</kbd><span>轉向</span></div><div><kbd>空白鍵</kbd><span>氮氣加速</span></div></div>
+        <div class="best">個人最佳 <strong id="best">--:--.---</strong></div>
+      </div>
+
+      <div class="race-panel">
+        <div class="hud">
+          <div class="hud-block"><span>圈數</span><strong id="lap">01<span> / 03</span></strong></div>
+          <div class="hud-block timer"><span>賽事時間</span><strong id="time">00:00.000</strong></div>
+          <div class="hud-block position"><span>名次</span><strong id="place">04<span> / 04</span></strong></div>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="game" aria-label="F1 賽車 3D 第一人稱賽道"></canvas>
+          <div id="overlay" class="overlay">
+            <div class="overlay-card"><p class="eyebrow">3D COCKPIT · STREET CIRCUIT</p><h2 id="overlayTitle">燈號熄滅，<br>比賽開始。</h2><p id="overlayText">方向鍵 / WASD 操控 · 拖曳方向盤轉向 · 空白鍵 ERS</p><button id="startBtn" class="start-btn">開始比賽 <span>↗</span></button></div>
+          </div>
+          <div id="countdown" class="countdown" aria-live="assertive"></div>
+          <div class="speed"><span id="speed">000</span><small>KM/H</small></div>
+          <div class="track-label">MONACO<br><span>STREET CIRCUIT</span></div>
+          <div class="wheel-control" id="wheelControl" role="slider" aria-label="拖曳方向盤轉向" aria-valuemin="-100" aria-valuemax="100" aria-valuenow="0"><span class="wheel-spoke">✳</span><small>DRAG TO STEER</small></div>
+          <button id="touchThrottle" class="touch-throttle" aria-label="按住加速">加速<br><small>HOLD</small></button>
+        </div>
+        <div class="race-footer"><div class="boost"><span>ERS BOOST</span><div class="boost-track"><i id="boostBar"></i></div><small>SPACE</small></div><div class="flag"><span class="flag-icon">▧</span> 3 LAPS <i></i> 4 DRIVERS</div></div>
+      </div>
+    </section>
+    <footer class="page-footer"><span>APEX ARCADE SERIES</span><span>MADE FOR THE LOVE OF RACING <b>✳</b></span></footer>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
