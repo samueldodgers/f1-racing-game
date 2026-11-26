@@ -24,7 +24,11 @@
 
 ### 進行中
 
-- [ ] 啟用 GitHub Pages（GitHub Actions）並確認網站發布成功
+無
+
+### 已完成部署
+
+- [x] 設定 GitHub Pages 使用 GitHub Actions，確認部署成功且公開網站可載入
 
 ### 待辦
 
